@@ -9,7 +9,7 @@ import staticdata.WebUrls;
 public class CheckBoxes extends BaseTest{
 
     @Test
-    public void FirstCheckboxTest() {
+    public void firstCheckboxTest() {
         driver.get(WebUrls.CHECKBOX_URL);
         boolean isFirstCheckboxDisabled = driver.findElement(By.xpath("//input[1]")).isSelected();
         Assert.assertFalse(isFirstCheckboxDisabled);
@@ -19,7 +19,7 @@ public class CheckBoxes extends BaseTest{
     }
 
     @Test
-    public void SecondCheckboxTest() {
+    public void secondCheckboxTest() {
         driver.get(WebUrls.CHECKBOX_URL);
         boolean isSecondCheckboxEnabled = driver.findElement(By.xpath("//input[2]")).isSelected();
         Assert.assertTrue(isSecondCheckboxEnabled);
