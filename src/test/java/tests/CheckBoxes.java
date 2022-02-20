@@ -4,27 +4,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.CheckBoxesPage;
 import staticdata.WebUrls;
 
 public class CheckBoxes extends BaseTest{
 
+    CheckBoxesPage checkBoxesPage;
+
     @Test
-    public void firstCheckboxTest() {
-        driver.get(WebUrls.CHECKBOX_URL);
-        boolean isFirstCheckboxDisabled = driver.findElement(By.xpath("//input[1]")).isSelected();
-        Assert.assertFalse(isFirstCheckboxDisabled);
-        driver.findElement(By.xpath("//input[1]")).click();
-        boolean isFirstCheckboxEnabled = driver.findElement(By.xpath("//input[1]")).isSelected();
-        Assert.assertTrue(isFirstCheckboxEnabled);
+    public void firstCheckboxTest() throws InterruptedException {
+        checkBoxesPage = new CheckBoxesPage(driver);
+        checkBoxesPage.openCheckBoxesPage();
+        checkBoxesPage.isFirstCheckBoxSelected();
+        Assert.assertFalse(checkBoxesPage.isFirstCheckBoxSelected());
+        checkBoxesPage.clickFirstCheckBox();
+        checkBoxesPage.isFirstCheckBoxSelected();
+        Assert.assertTrue(checkBoxesPage.isFirstCheckBoxSelected());
     }
 
     @Test
     public void secondCheckboxTest() {
-        driver.get(WebUrls.CHECKBOX_URL);
-        boolean isSecondCheckboxEnabled = driver.findElement(By.xpath("//input[2]")).isSelected();
-        Assert.assertTrue(isSecondCheckboxEnabled);
-        driver.findElement(By.xpath("//input[2]")).click();
-        boolean isSecondCheckboxDisabled = driver.findElement(By.xpath("//input[2]")).isSelected();
-        Assert.assertFalse(isSecondCheckboxDisabled);
+        checkBoxesPage = new CheckBoxesPage(driver);
+        checkBoxesPage.openCheckBoxesPage();
+        checkBoxesPage.isSecondCheckBoxSelected();
+        Assert.assertTrue(checkBoxesPage.isSecondCheckBoxSelected());
+        checkBoxesPage.clickSecondCheckBox();
+        checkBoxesPage.isSecondCheckBoxSelected();
+        Assert.assertFalse(checkBoxesPage.isSecondCheckBoxSelected());
     }
 }
