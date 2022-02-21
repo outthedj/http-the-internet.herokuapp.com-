@@ -3,17 +3,21 @@ package tests;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AddRemoveElementPage;
 import staticdata.WebUrls;
 
 public class AddRemoveElements extends BaseTest{
 
+    AddRemoveElementPage addRemoveElementPage;
+
     @Test
     public void isAddingRemovingElementsWorksTest () {
-        driver.get(WebUrls.ADDREMOVEELEMENTS_URL);
-        driver.findElement(By.xpath("//button")).click();
-        driver.findElement(By.xpath("//button")).click();
-        driver.findElement(By.xpath("//div/button[@class='added-manually']")).click();
-        int numbersOfElements = driver.findElements(By.xpath("//div/button[@class='added-manually']")).size();
-        Assert.assertEquals(numbersOfElements, 1, "Неправильное количество элементов на странице");
+        addRemoveElementPage = new AddRemoveElementPage(driver);
+        addRemoveElementPage.openAddRemoveElementPage();
+        addRemoveElementPage.clickAddElementButton();
+        addRemoveElementPage.clickAddElementButton();
+        addRemoveElementPage.deleteElement();
+        addRemoveElementPage.howManyElements();
+        Assert.assertEquals(addRemoveElementPage.getNumbersOfElements(), 1, "Неправильное количество элементов на странице");
     }
 }

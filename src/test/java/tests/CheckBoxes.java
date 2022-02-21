@@ -12,7 +12,7 @@ public class CheckBoxes extends BaseTest{
     CheckBoxesPage checkBoxesPage;
 
     @Test
-    public void firstCheckboxTest() throws InterruptedException {
+    public void firstCheckboxTest() {
         checkBoxesPage = new CheckBoxesPage(driver);
         checkBoxesPage.openCheckBoxesPage();
         checkBoxesPage.isFirstCheckBoxSelected();
