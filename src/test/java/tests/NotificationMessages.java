@@ -15,8 +15,6 @@ public class NotificationMessages extends BaseTest{
         notificationMessagePage = new NotificationMessagePage(driver);
         notificationMessagePage.openNotificationMessagePage();
         notificationMessagePage.clickHereButton();
-        String a = driver.findElement(By.id("flash")).getText();
-        Assert.assertEquals(a,"Action successful\n" +
-                "×");
+        notificationMessagePage.isTextCorrect();
     }
 }

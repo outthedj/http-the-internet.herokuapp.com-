@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import staticdata.WebUrls;
 
 public class InputsPage extends BasePage{
@@ -23,5 +24,10 @@ public class InputsPage extends BasePage{
 
     public void useArrowUp(){
         driver.findElement(INPUT).sendKeys(Keys.ARROW_UP);
+    }
+
+    public void isValueNottNull() {
+        String value = driver.findElement(getINPUT()).getAttribute("value");
+        Assert.assertNotNull(value);
     }
 }

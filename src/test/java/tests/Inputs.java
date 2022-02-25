@@ -16,7 +16,6 @@ public class Inputs extends BaseTest{
         inputsPage = new InputsPage(driver);
         inputsPage.openInputsPage();
         inputsPage.useArrowUp();
-        String value = driver.findElement(inputsPage.getINPUT()).getAttribute("value");
-        Assert.assertNotNull(value);
+        inputsPage.isValueNottNull();
     }
 }

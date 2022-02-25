@@ -15,9 +15,6 @@ public class Typos extends BaseTest{
     public void isParagraphCorrectTest() {
         typosPage = new TyposPage(driver);
         typosPage.openTyposPage();
-        String a = driver.findElement(By.className("example")).getText();
-        Assert.assertEquals(a,"Typos\n" +
-                "This example demonstrates a typo being introduced. It does it randomly on each page load.\n" +
-                "Sometimes you'll see a typo, other times you won't.");
+        typosPage.isTextCorrect();
     }
 }
