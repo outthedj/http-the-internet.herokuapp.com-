@@ -21,9 +21,9 @@ public class NotificationMessagePage extends BasePage{
         driver.findElement(CLICK_HERE_BUTTON).click();
     }
 
-    public void isTextCorrect(){
-        String a = driver.findElement(By.id("flash")).getText();
-        Assert.assertEquals(a,"Action successful\n" +
-                "×");
+    public String text;
+
+    public String isTextCorrect(){
+        return text = driver.findElement(By.id("flash")).getText();
     }
 }

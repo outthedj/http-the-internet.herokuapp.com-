@@ -17,5 +17,6 @@ public class Inputs extends BaseTest{
         inputsPage.openInputsPage();
         inputsPage.useArrowUp();
         inputsPage.isValueNottNull();
+        Assert.assertNotNull(inputsPage.value);
     }
 }

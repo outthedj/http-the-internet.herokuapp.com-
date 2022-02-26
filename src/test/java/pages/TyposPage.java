@@ -17,10 +17,9 @@ public class TyposPage extends BasePage{
         driver.get(WebUrls.TYPOS_URL);
     }
 
-    public void isTextCorrect(){
-        String a = driver.findElement(By.className("example")).getText();
-        Assert.assertEquals(a,"Typos\n" +
-                "This example demonstrates a typo being introduced. It does it randomly on each page load.\n" +
-                "Sometimes you'll see a typo, other times you won't.");
+    public String a;
+
+    public String isTextCorrect2(){
+        return a = driver.findElement(By.className("example")).getText();
     }
 }

@@ -16,5 +16,7 @@ public class NotificationMessages extends BaseTest{
         notificationMessagePage.openNotificationMessagePage();
         notificationMessagePage.clickHereButton();
         notificationMessagePage.isTextCorrect();
+        Assert.assertEquals(notificationMessagePage.text,"Action successful\n" +
+                "×");
     }
 }

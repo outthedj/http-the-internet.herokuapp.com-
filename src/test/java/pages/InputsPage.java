@@ -26,8 +26,9 @@ public class InputsPage extends BasePage{
         driver.findElement(INPUT).sendKeys(Keys.ARROW_UP);
     }
 
-    public void isValueNottNull() {
-        String value = driver.findElement(getINPUT()).getAttribute("value");
-        Assert.assertNotNull(value);
+    public String value;
+
+    public String isValueNottNull() {
+        return value = driver.findElement(getINPUT()).getAttribute("value");
     }
 }
