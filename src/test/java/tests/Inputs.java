@@ -4,15 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.InputsPage;
 import staticdata.WebUrls;
 
 public class Inputs extends BaseTest{
 
+    InputsPage inputsPage;
+
     @Test
     public void isKeyboardArrowsWorksTest() {
-        driver.get(WebUrls.INPUTS_URL);
-        driver.findElement(By.cssSelector("[type=\"number\"]")).sendKeys(Keys.ARROW_UP);
-        String a = driver.findElement(By.cssSelector("[type=\"number\"]")).getAttribute("value");
-        Assert.assertNotNull(a);
+        inputsPage = new InputsPage(driver);
+        inputsPage.openInputsPage();
+        inputsPage.useArrowUp();
+        inputsPage.isValueNottNull();
+        Assert.assertNotNull(inputsPage.value);
     }
 }
