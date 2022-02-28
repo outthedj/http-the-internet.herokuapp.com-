@@ -9,4 +9,5 @@ public class WebUrls {
     public static final String ADDREMOVEELEMENTS_URL = "http://the-internet.herokuapp.com/add_remove_elements/";
     public static final String SORTABLEDATATABLES_URL = "http://the-internet.herokuapp.com/tables";
     public static final String JAVASCRIPTALERTS_URL = "http://the-internet.herokuapp.com/javascript_alerts";
+    public static final String FILEUPLOAD_URL = "http://the-internet.herokuapp.com/upload";
 }
