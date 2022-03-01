@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import staticdata.WebUrls;
 
@@ -18,7 +19,8 @@ public class FramesDragAndDropPage extends BasePage{
 
     public void method(){
         driver.get(WebUrls.FRAMESDRAGANDDROP_URL);
-        //driver.switchTo().frame(FRAMEAREA);
+        WebElement frame = driver.findElement(FRAMEAREA);
+        driver.switchTo().frame(frame);
 
     }
 }
