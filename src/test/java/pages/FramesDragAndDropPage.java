@@ -13,10 +13,6 @@ public class FramesDragAndDropPage extends BasePage{
     private By FRAMEAREA = By.xpath("//iframe[@class='demo-frame']");
     private By TEXT = By.xpath("//div[@id='droppable']/p");
 
-    public By getTEXT() {
-        return TEXT;
-    }
-
     public FramesDragAndDropPage(WebDriver driver) {
         super(driver);
     }
@@ -25,20 +21,14 @@ public class FramesDragAndDropPage extends BasePage{
 
     public String text2;
 
-    public String dragChecking() throws InterruptedException {
+    public String dragChecking() {
         driver.get(WebUrls.FRAMESDRAGANDDROP_URL);
-        Thread.sleep(1000);
         WebElement frame = driver.findElement(FRAMEAREA);
         driver.switchTo().frame(frame);
         WebElement target1 = driver.findElement(DRAGMETOMYTARGETFIELD);
         WebElement target2 = driver.findElement(DROPHEREFIELD);
         actions = new Actions(driver);
         actions.dragAndDrop(target1, target2).perform();
-
-        Thread.sleep(1000);
-        return driver.findElement(TEXT).getText();
-
-
-
+        return text2 = driver.findElement(TEXT).getText();
     }
 }

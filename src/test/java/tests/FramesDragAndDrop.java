@@ -9,9 +9,9 @@ public class FramesDragAndDrop extends BaseTest{
     FramesDragAndDropPage framesDragAndDropPage;
 
     @Test
-    public void checkText() throws InterruptedException {
+    public void checkText() {
         framesDragAndDropPage = new FramesDragAndDropPage(driver);
         framesDragAndDropPage.dragChecking();
-        Assert.assertEquals(framesDragAndDropPage.getTEXT(), "Dropped!");
+        Assert.assertEquals(framesDragAndDropPage.text2, "Dropped!");
     }
 }
